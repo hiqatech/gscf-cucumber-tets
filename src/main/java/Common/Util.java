@@ -52,7 +52,8 @@ public class Util {
                                 listHeaders.get(i) + " " + listValues1.get(i));
                             matchingItem = "FOUND";}
                         else {
-                            whatIsNotMatching.add("List1 Item " + listValues1.getFirst() + " foud in List2 but not matching on "
+                            whatIsNotMatching.add("List1 Item " + listValues1.getFirst() +
+                                    " foud in List2 but not matching on "
                                     + listHeaders.get(i) + " as "
                                     + listValues1.get(i) + " not equals " + listValues2.get(i));
                             System.out.println(whatIsNotMatching.getLast());
@@ -110,6 +111,11 @@ public class Util {
 
     public static void AssertLists() {
         System.out.println("Asserting Lists discrepancies");
-        Assert.assertEquals(whatIsNotMatching.toString(),"");
+        for(String notMatching : whatIsNotMatching) {
+            System.out.println("Discrepancies : ");
+            System.out.println(notMatching);
+
+        }
+        Assert.assertEquals(whatIsNotMatching.toString(), "");
     }
 }
