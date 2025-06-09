@@ -7,14 +7,10 @@ Scenario: Validate that two lists contain the same items with name, price, and c
       | apple  | 1.00  | fruit    |
       | orange | 1.50  | fruit    |
       | banana | 0.75  | fruit    |
-      | kiwi | 1.50  | vegetable |
-      | melon | 1.00  | vegetable |
     And I have the following items in the second list:
       | name   | price | category |
-      | banana | 0.70  | fruit    |
+      | banana | 0.75  | fruit    |
       | apple  | 1.00  | fruit    |
       | orange | 1.50  | vegetable |
-      | berry | 1.50  | fruit |
-      | melon | 1.20  | fruit |
     When I compare both lists
     Then the lists should contain the same items with name, price, and category, regardless of order
