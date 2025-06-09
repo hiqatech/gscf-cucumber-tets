@@ -1,5 +1,6 @@
 Feature: Validate Lists
 
+  @ListTests
 Scenario: Validate that two lists contain the same items with name, price, and category, regardless of order
 Given I have the following items in the first list:
 | name   | price | category |
