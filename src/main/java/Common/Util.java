@@ -96,7 +96,7 @@ public class Util {
                 map1LineNumber++;
             }
             if(!matchingItem.equals("FOUND")) {
-                whatIsNotMatching.add("List2 Item" + listValues1.get(0) +  " not found in List1");
+                whatIsNotMatching.add("List2 Item" + listValues1.getFirst() +  " not found in List1");
                 System.out.println(whatIsNotMatching.getLast());
             }
             map1LineNumber = 0;
