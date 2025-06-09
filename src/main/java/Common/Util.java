@@ -43,16 +43,16 @@ public class Util {
             for (Map map2 : List2) {
                 System.out.println("- with Map2 Item" + map2LineNumber);
                 List<String> listValues2 = new ArrayList<String>(map2.values());
-                if(listValues1.get(0).equals(listValues2.get(0))) {
+                if(listValues1.getFirst().equals(listValues2.getFirst())) {
                     System.out.println("Match found " +
-                            listHeaders.get(0) + " " + listValues1.get(0));
+                            listHeaders.getFirst() + " " + listValues1.getFirst());
                     for(int i=1;i<listValues1.size();i++) {
                         if(listValues1.get(i).equals(listValues2.get(i)))
                         {System.out.println("Matching params found " +
                                 listHeaders.get(i) + " " + listValues1.get(i));
                             matchingItem = "FOUND";}
                         else {
-                            whatIsNotMatching.add("List1 Item " + listValues1.get(0) + " foud in List2 but not matching on "
+                            whatIsNotMatching.add("List1 Item " + listValues1.getFirst() + " foud in List2 but not matching on "
                                     + listHeaders.get(i) + " as "
                                     + listValues1.get(i) + " not equals " + listValues2.get(i));
                             System.out.println(whatIsNotMatching.getLast());
@@ -64,13 +64,13 @@ public class Util {
                 map2LineNumber++;
             }
             if(!matchingItem.equals("FOUND")) {
-                whatIsNotMatching.add("List 1 Item " + listValues1.get(0) +  " not found in List2");
+                whatIsNotMatching.add("List 1 Item " + listValues1.getFirst() +  " not found in List2");
                 System.out.println(whatIsNotMatching.getLast());
             }
             map2LineNumber = 0;
             map1LineNumber++;
             matchingItem = "";
-            System.out.println("--------------------------------------------------");
+            System.out.println("---");
         }
 
         map1LineNumber = 0;
@@ -102,13 +102,14 @@ public class Util {
             map1LineNumber = 0;
             map2LineNumber++;
             matchingItem = "";
-            System.out.println("--------------------------------------------------");
+            System.out.println("----------------------");
         }
 
-
+        System.out.println("--------------------------------------------------");
     }
 
     public static void AssertLists() {
+        System.out.println("Asserting Lists discrepancies");
         Assert.assertEquals(whatIsNotMatching.toString(),"");
     }
 }
