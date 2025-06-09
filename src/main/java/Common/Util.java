@@ -85,9 +85,9 @@ public class Util {
             for (Map map1 : List1) {
                 System.out.println("- with Map1 Item" + map1LineNumber);
                 List<String> listValues2 = new ArrayList<String>(map1.values());
-                if(listValues1.get(0).equals(listValues2.get(0))) {
+                if(listValues1.getFirst().equals(listValues2.getFirst())) {
                     System.out.println("Match found " +
-                            listHeaders.get(0) + " " + listValues1.get(0));
+                            listHeaders.getFirst() + " " + listValues1.getFirst());
                     for(int i=1;i<listValues1.size();i++) {
                         if(listValues1.get(i).equals(listValues2.get(i)))
                             matchingItem = "FOUND";}
