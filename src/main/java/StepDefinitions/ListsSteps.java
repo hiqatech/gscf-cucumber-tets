@@ -11,12 +11,12 @@ public class ListsSteps {
     @Given("I have the following items in the first list:")
     public void i_have_the_following_items_in_the_first_list(DataTable dataTable) {
         List<Map<String,String>> data = dataTable.asMaps();
-        setList1(data);
+        setList("1",data);
     }
     @Given("I have the following items in the second list:")
     public void i_have_the_following_items_in_the_second_list(DataTable dataTable) {
         List<Map<String,String>> data = dataTable.asMaps();
-        setList2(data);
+        setList("2",data);
     }
     @When("I compare both lists")
     public void i_compare_both_lists() {

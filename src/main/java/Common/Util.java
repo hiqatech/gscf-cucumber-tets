@@ -8,18 +8,17 @@ import java.util.Map;
 
 public class Util {
 
-    public static List<Map<String,String>> List1;
-    public static List<Map<String,String>> List2;
+    private static List<Map<String,String>> List1;
+    private static List<Map<String,String>> List2;
 
-    public static String matchingItem = "";
-    public static List<String> whatIsNotMatching = new ArrayList<>();
-    public static List<String> expectedMatching = new ArrayList<>();
+    private static String matchingItem = "";
+    private static List<String> whatIsNotMatching = new ArrayList<>();
+    private static List<String> expectedMatching = new ArrayList<>();
 
-
-    public static void setList1(List<Map<String, String>> data) {
-        List1 = data;
+    public static void setList(String listNumber, List<Map<String, String>> data) {
+        List<Map<String,String>> List = data;
         System.out.println("Setting List1");
-        for (Map map : List1) {
+        for (Map map : List) {
             List<String> listHeaders = new ArrayList<String>(map.keySet());
             List<String> listValues1 = new ArrayList<String>(map.values());
             for (int i = 0; i < listHeaders.size(); i++) {
@@ -28,21 +27,12 @@ public class Util {
             }
             System.out.println();
         }
-        System.out.println("------------------------");
-    }
 
-    public static void setList2(List<Map<String, String>> data) {
-        List2 = data;
-        System.out.println("Setting List2");
-        for (Map map : List2) {
-            List<String> listHeaders = new ArrayList<String>(map.keySet());
-            List<String> listValues2 = new ArrayList<String>(map.values());
-            for (int i = 0; i < listHeaders.size(); i++) {
-            System.out.print(listHeaders.get(i) +
-                    " = " + listValues2.get(i) + " ");
-            }
-            System.out.println();
-        }
+        if(listNumber.equals("1"))
+            List1 = List;
+        else if(listNumber.equals("2"))
+            List2 = List;
+
         System.out.println("------------------------");
     }
 
